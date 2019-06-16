@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dev:
+    image: node:10.13-alpine
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+    environment:
+      NODE_ENV: development
+      PORT: ${PORT}
+    ports:
+      - ${PORT}:${PORT}
+      - 9229:9229
+    command: npm run start:watch

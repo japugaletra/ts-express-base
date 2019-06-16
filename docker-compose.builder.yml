@@ -1,0 +1,22 @@
+version: '2.1'
+services:
+  service-base:
+    image: node:10.13-alpine
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+
+  install:
+    extends:
+      service: service-base
+    command: npm i
+
+  build:
+    extends:
+      service: service-base
+    command: npm run build
+
+  test:
+    extends:
+      service: service-base
+    command: npm test
