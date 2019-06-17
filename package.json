@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "prebuild": "eslint src/** && npm test",
+    "prebuild": "concurrently \"eslint src/**\" \"npm test\"",
     "build": "tsc",
     "start": "node .",
     "start:dev": "npm run build && node --inspect=0.0.0.0:9229 . --inspect",
@@ -25,9 +25,10 @@
   "author": "Richard Kenzie",
   "license": "ISC",
   "dependencies": {
-    "typescript": "^3.5.2",
+    "@types/express": "^4.17.0",
+    "concurrently": "^4.1.0",
     "express": "^4.17.1",
-    "@types/express": "^4.17.0"
+    "typescript": "^3.5.2"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",

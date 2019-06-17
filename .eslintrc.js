@@ -10,5 +10,6 @@ module.exports = {
   rules: {
     // Add rules here
     "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": ["error"],
   },
 };

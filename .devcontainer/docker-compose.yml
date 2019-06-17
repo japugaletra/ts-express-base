@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  vs-code-server-ts:
 services:
   dev:
     image: dev
@@ -10,5 +12,7 @@ services:
       - 3000:3000
     volumes:
       - ../:/usr/src/service
+      - ~/.gitconfig:/root/.gitconfig
+      - vs-code-server-ts:/root/.vscode-server
     working_dir: /usr/src/service
     command: sleep infinity
