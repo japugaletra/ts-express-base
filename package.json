@@ -4,16 +4,12 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "test": "jest",
     "prebuild": "eslint src/** && npm test",
     "build": "tsc",
     "start": "node .",
     "start:dev": "npm run build && node --inspect=0.0.0.0:9229 . --inspect",
-    "start:watch": "nodemon -L",
-    "docker": "docker-compose -f docker-compose.builder.yml run --rm",
-    "docker:start": "docker-compose up",
-    "docker:install": "npm run docker install",
-    "docker:test": "npm run docker test",
-    "test": "jest"
+    "start:watch": "nodemon -L"
   },
   "nodemonConfig": {
     "ignore": [

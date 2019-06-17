@@ -1,0 +1,14 @@
+{
+  "name": "Typescript Express Application",
+  "dockerComposeFile": "docker-compose.yml",
+	"service": "dev",
+	"workspaceFolder": "/usr/src/service",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "visualstudioexptteam.vscodeintellicode",
+    "shardulm94.trailing-spaces",
+    "eamodio.gitlens"
+  ],
+  "postCreateCommand": "npm i"
+}

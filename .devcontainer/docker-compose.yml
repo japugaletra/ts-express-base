@@ -1,0 +1,14 @@
+version: '3'
+services:
+  dev:
+    image: dev
+    build: .
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ../:/usr/src/service
+    working_dir: /usr/src/service
+    command: sleep infinity
