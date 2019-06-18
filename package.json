@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "prebuild": "concurrently \"eslint src/**\" \"npm test\"",
+    "prebuild": "eslint src/**",
     "build": "tsc",
-    "start": "node .",
-    "start:dev": "npm run build && node --inspect=0.0.0.0:9229 . --inspect",
-    "start:watch": "nodemon -L"
+    "prestart": "npm run build",
+    "start": "concurrently -n test,server -c yellow,magenta \"npm test\" \"node --inspect=0.0.0.0:9229 . --inspect\"",
+    "debug": "nodemon -L"
   },
   "nodemonConfig": {
     "ignore": [
@@ -19,7 +19,7 @@
     "watch": [
       "src"
     ],
-    "exec": "npm run start:dev",
+    "exec": "npm run start",
     "ext": "ts"
   },
   "author": "Richard Kenzie",
